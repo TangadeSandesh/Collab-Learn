@@ -1,0 +1,157 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Apply some base styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #071525;
+    color: white;
+    padding: 10px 0;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .navbar p {
+    font-size: 24px;
+  }
+  
+  .navbar .nav-learn p {
+    color: #f4f4f4;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  /* Navigation styles */
+  .nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    /* margin-right: 0px; /* Adjust the spacing as needed */
+    /* font-size: 18px;  */
+  }
+  
+  .nav li {
+    margin-right: 70px;
+    font-size: 18px;
+  }
+  
+  /* Hero section styles */
+  .hero-section {
+    background-color: #fff;
+    padding: 40px;
+  }
+  
+  .hero-msg {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Skilled section styles */
+  .skilled-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .box {
+    flex-basis: calc(33.33% - 20px);
+    background-color: #fff;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .box-content {
+    font-size: 20px;
+  }
+  
+  .box-image {
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    margin-bottom: 10px;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer-panel1,
+  .footer-panel2,
+  .footer-panel3 {
+    flex-basis: 33.33%;
+  }
+  
+  .footer-panel2 ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-panel2 ul a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .navbar .nav {
+      margin-top: 20px;
+    }
+  
+    .nav li {
+      margin-right: 0;
+    }
+  
+    .skilled-section .box {
+      flex-basis: 100%;
+    }
+  }
+  
+  /* StudentPage.css */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
