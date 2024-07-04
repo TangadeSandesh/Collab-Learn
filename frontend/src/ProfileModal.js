@@ -5,10 +5,11 @@ import axios from 'axios';
 const ProfileModal = ({ show, handleClose, userToken }) => {
   const [userData, setUserData] = useState({});
 
+  axios.defaults.withCredentials = true;
   useEffect(() => {
     async function fetchUserProfile() {
       try {
-        const response = await axios.get('http://localhost:5000/profile', {
+        const response = await axios.get('https://collab-learn-server.vercel.app/profile', {
           headers: {
             Authorization: `Bearer ${userToken}`, // Include the user's token here
           },

@@ -10,11 +10,11 @@ function SignupForm() {
   const [role, setRole] = useState(''); 
   const [formSubmitted, setFormSubmitted] = useState(false);
   
-
+  axios.defaults.withCredentials = true;
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5000/register', { name, email, password, role })
+    axios.post('https://collab-learn.vercel.app/register', { name, email, password, role })
       .then(result => {
         console.log(result);
         setFormSubmitted(true);

@@ -10,11 +10,12 @@ function LoginForm() {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const navigate = useNavigate()
 
+  axios.defaults.withCredentials = true;
   // Function to handle form submission
   const handleSubmit = (e) => {
     
     e.preventDefault();
-    axios.post('http://localhost:5000/login',{email, password})
+    axios.post('https://collab-learn-server.vercel.app/login',{email, password})
     .then(result =>{
       console.log(result)
       if(result.data   ==="tpage"){

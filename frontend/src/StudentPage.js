@@ -9,17 +9,17 @@ const StudentPage = () => {
   const [videoTitle, setVideoTitle] = useState('');
   const [videoUrl, setVideoUrl] = useState('');
   
-
+  axios.defaults.withCredentials = true;
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
 
   const handleSearch = () => {
     axios
-      .get(`http://localhost:5000/stream-video/${videoTitle}`) // Use the new streaming route
+      .get(`https://collab-learn-server.vercel.app/${videoTitle}`) // Use the new streaming route
       .then((response) => {
         if (response.status === 200) {
-          setVideoUrl(`http://localhost:5000/stream-video/${videoTitle}`);
+          setVideoUrl(`https://collab-learn-server.vercel.app/stream-video/${videoTitle}`);
         } else {
           
           console.log('No videos found.');

@@ -178,6 +178,7 @@ const TeacherPage = () => {
           setFile(e.target.files[0]);
         };
 
+        axios.defaults.withCredentials = true;
         const handleFileUpload = async () => {
           try {
             const formData = new FormData();
@@ -186,7 +187,7 @@ const TeacherPage = () => {
             formData.append('tag', tag);
             formData.append('video', file);
 
-            const response = await axios.post('http://localhost:5000/upload-video', formData, {
+            const response = await axios.post('https://collab-learn-server.vercel.app/upload-video', formData, {
               headers: {
                 'Content-Type': 'multipart/form-data',
               },
