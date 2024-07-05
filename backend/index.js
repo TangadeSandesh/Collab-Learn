@@ -5,6 +5,8 @@ const multer = require("multer");
 const cors=require("cors");
 const mongoose=require('mongoose');
 const path = require("path");
+require('dotenv').config(); 
+
 
 const port= process.env.PORT || 5000;
 const RegisterModel=require('./models/register')
@@ -20,8 +22,14 @@ app.use(cors(
   }
 ));
 
+// Use the connection string from the .env file
+const conString = process.env.CON_STRING;
+
 // mongoose.connect("mongodb://127.0.0.1:27017/registrations");
-mongoose.connect("mongodb+srv://Sandesh:kbaSbSU4HC4RYRpf@registrations.tczoywi.mongodb.net/?retryWrites=true&w=majority&appName=registrations");
+mongoose.connect(conString, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
