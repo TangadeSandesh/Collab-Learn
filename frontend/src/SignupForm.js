@@ -25,6 +25,7 @@ function SignupForm() {
         setRole('');
       })
       .catch(err => {
+        console.log("error zala re")
         console.log(err);
       });
   };
