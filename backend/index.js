@@ -111,11 +111,23 @@ app.post("/login",(req,res) =>{
 })
 
 
-app.post("/register", async(req,res)=>{
-    RegisterModel.create(req.body)
-    .then(users =>res.json(users))
-    .catch(err => res.json(err))
+// app.post("/register", async(req,res)=>{
+//     RegisterModel.create(req.body)
+//     .then(users =>res.json(users))
+//     .catch(err => res.json(err))
+// });
+
+app.post("/register", async (req, res) => {
+  console.log('Request received:', req.body); // Log request data
+  try {
+    const user = await RegisterModel.create(req.body);
+    res.json(users);
+  } catch (err) {
+    console.error('Error creating user:', err); // Log errors
+    res.status(500).json(err);
+  }
 });
+
 
 app.listen(port,()=> {
     console.log(`server is running at port no ${port}`);
