@@ -15,7 +15,8 @@ app.use(express.urlencoded({extended:false}));
 app.use(cors(
   {
     origin: ["https://collab-learn.vercel.app"],
-    methods: ["POST","GET"],
+    methods: ["POST","GET","OPTIONS"],
+    allowedHeaders: ['Content-Type'],
     credentials: true
   }
 ));
