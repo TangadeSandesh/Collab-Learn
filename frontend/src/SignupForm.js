@@ -14,7 +14,7 @@ function SignupForm() {
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('https://collab-learn.vercel.app/register', { name, email, password, role })
+    axios.post('https://collab-learn-server.vercel.app/register', { name, email, password, role })
       .then(result => {
         console.log(result);
         setFormSubmitted(true);
