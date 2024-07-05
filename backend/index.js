@@ -127,6 +127,7 @@ app.post("/login",(req,res) =>{
 // });
 
 app.post("/register", async (req, res) => {
+  console.log("////////////////////////////////////////////////////////")
   console.log('Request received:', req.body); // Log request data
   try {
     const user = await RegisterModel.create(req.body);
