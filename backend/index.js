@@ -130,7 +130,7 @@ app.post("/register", async (req, res) => {
   console.log('Request received:', req.body); // Log request data
   try {
     const user = await RegisterModel.create(req.body);
-    res.json(users);
+    res.json(user);
   } catch (err) {
     console.error('Error creating user:', err); // Log errors
     res.status(500).json(err);
